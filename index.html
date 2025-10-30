@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly Teixeira - Advocacia Previdenciária</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (para os ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo base para a fonte */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* cinza claro de fundo */
+        }
+        
+        /* Fundo da seção Hero */
+        .hero-section {
+            background-image: linear-gradient(rgba(153, 27, 27, 0.85), rgba(153, 27, 27, 0.85)), url(https://images.unsplash.com/photo-1600880292203-9428b49de401?q=80&w=1920&auto=format&fit=crop);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Animação suave para links e botões */
+        a, button {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+
+    <script>
+        // Configuração personalizada do Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#991b1b', // Vermelho Escuro (Tailwind Red-800)
+                        'brand-secondary': '#374151', // Cinza Chumbo (Tailwind Gray-700)
+                        'brand-light': '#f3f4f6', // Cinza claro (Tailwind Gray-100)
+                        'brand-dark': '#1f2937', // Cinza escuro (Tailwind Gray-800)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-brand-dark">
+
+    <!-- ===== HEADER / NAVEGAÇÃO ===== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img fetchpriority="high" src="https://kellyteixeiraprev.com.br/wp-content/uploads/2025/05/Prancheta-52-copia-2@4x-1024x243.png" 
+                     class="h-12 w-auto" 
+                     alt="Logo Kelly Teixeira Advocacia Previdenciária">
+            </a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-brand-dark hover:text-brand-primary font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full" aria-current="page">HOME</a>
+                <a href="#" class="text-gray-500 hover:text-brand-primary font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">O ESCRITÓRIO</a>
+                <a href="#" class="text-gray-500 hover:text-brand-primary font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">ATUAÇÃO</a>
+                <a href="#" class="text-gray-500 hover:text-brand-primary font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary after:transition-all after:duration-300 hover:after:w-full">BLOG</a>
+            </div>
+            
+            <!-- Botão de Contato Desktop -->
+            <a href="#contato" class="hidden md:inline-block bg-brand-secondary text-white px-5 py-2 rounded-lg font-medium hover:bg-opacity-90 shadow transform transition-transform duration-300 hover:scale-105">
+                Entre em Contato
+            </a>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl text-brand-primary"></i>
+            </button>
+        </nav>
+
+        <!-- Menu Mobile (Oculto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t">
+            <a href="#" class="block px-4 py-3 text-brand-dark hover:bg-gray-50 font-medium" aria-current="page">HOME</a>
+            <a href="#" class="block px-4 py-3 text-gray-500 hover:bg-gray-50 font-medium">O ESCRITÓRIO</a>
+            <a href="#" class="block px-4 py-3 text-gray-500 hover:bg-gray-50 font-medium">ATUAÇÃO</a>
+            <a href="#" class="block px-4 py-3 text-gray-500 hover:bg-gray-50 font-medium">BLOG</a>
+            <div class="p-4">
+                <a href="#contato" class="block text-center bg-brand-secondary text-white px-5 py-2 rounded-lg font-medium hover:bg-opacity-90 shadow">
+                    Entre em Contato
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- Seção Hero -->
+        <section class="hero-section text-white py-24 md:py-40">
+            <div class="container mx-auto max-w-7xl px-4 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                    Direitos previdenciários simplificados, benefícios garantidos
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90">
+                    Combinamos conhecimento técnico e acolhimento humano para transformar vidas, assegurando o acesso à previdência com eficiência e dignidade.
+                </p>
+                <a href="#contato" class="bg-brand-secondary text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105">
+                    Fale Conosco
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção de Pilares (Ícones) -->
+        <section class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto max-w-7xl px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    
+                    <!-- Pilar 1 -->
+                    <div class="flex flex-col items-center p-6 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
+                        <span class="flex items-center justify-center h-16 w-16 bg-brand-primary text-white rounded-full mb-4 shadow-lg">
+                            <i class="fas fa-anchor text-2xl"></i>
+                        </span>
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Porto Seguro</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Nosso trabalho vai além de resolver problemas jurídicos. Queremos ser um porto seguro, onde você se sinta acolhido e confiante.
+                        </p>
+                    </div>
+                    
+                    <!-- Pilar 2 -->
+                    <div class="flex flex-col items-center p-6 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
+                        <span class="flex items-center justify-center h-16 w-16 bg-brand-primary text-white rounded-full mb-4 shadow-lg">
+                            <i class="fas fa-hand-holding-heart text-2xl"></i>
+                        </span>
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Paixão por Ajudar</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Com mais de 20 anos de experiência, nos especializamos em oferecer soluções jurídicas completas e personalizadas para segurados do INSS.
+                        </p>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="flex flex-col items-center p-6 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
+                        <span class="flex items-center justify-center h-16 w-16 bg-brand-primary text-white rounded-full mb-4 shadow-lg">
+                            <i class="far fa-handshake text-2xl"></i>
+                        </span>
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Transformação</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Acreditamos que o direito previdenciário é uma ferramenta poderosa para transformar vidas, e nossa missão é garantir seu benefício.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Missão, Visão, Valores -->
+        <section class="py-20 md:py-24 bg-brand-light">
+            <div class="container mx-auto max-w-7xl px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Missão -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-brand-primary mb-4 flex items-center">
+                            <i class="far fa-handshake mr-3"></i> MISSÃO
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Promover a inclusão social por meio de soluções jurídicas eficazes e acessíveis, assegurando que cada cliente tenha seu direito previdenciário reconhecido.
+                        </p>
+                    </div>
+
+                    <!-- Visão -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-brand-primary mb-4 flex items-center">
+                            <i class="fas fa-hand-holding-heart mr-3"></i> VISÃO
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Ser referência em advocacia previdenciária no Brasil, reconhecida por nossa excelência técnica, atendimento acolhedor e impacto positivo na vida das pessoas.
+                        </p>
+                    </div>
+
+                    <!-- Valores -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-brand-primary mb-4 flex items-center">
+                            <i class="fas fa-anchor mr-3"></i> VALORES
+                        </h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li><strong>Empatia:</strong> Cada cliente é uma história.</li>
+                            <li><strong>Compromisso:</strong> Seriedade e dedicação.</li>
+                            <li><strong>Inclusão:</strong> Lutamos por direitos igualitários.</li>
+                            <li><strong>Transparência:</strong> Comunicação clara e honesta.</li>
+                            <li><strong>Excelência:</strong> Aperfeiçoamento constante.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="py-20 md:py-24 bg-brand-primary text-white">
+            <div class="container mx-auto max-w-5xl px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Estamos prontos para atender você.</h2>
+                    <p class="text-lg text-gray-200">Lutar pelos seus direitos é a nossa missão. Entre em contato e descubra como podemos ajudar!</p>
+                </div>
+                
+                <form class="bg-white text-brand-dark p-8 md:p-10 rounded-lg shadow-2xl max-w-2xl mx-auto" method="post">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="form-field-name" class="block text-sm font-medium mb-2">Nome</label>
+                            <input type="text" id="form-field-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label for="form-field-email" class="block text-sm font-medium mb-2">E-mail <span class="text-red-500">*</span></label>
+                            <input type="email" id="form-field-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="form-field-whatsapp" class="block text-sm font-medium mb-2">WhatsApp <span class="text-red-500">*</span></label>
+                        <input type="tel" id="form-field-whatsapp" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none" placeholder="(XX) 9XXXX-XXXX" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-brand-secondary text-white text-lg font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105">
+                            ENTRE EM CONTATO COMIGO
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-dark text-gray-300 py-16">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Coluna 1: Logo e Social -->
+                <div class="space-y-6">
+                    <img src="https://kellyteixeiraprev.com.br/wp-content/uploads/2025/05/Prancheta-52-copia-2@4x-1024x243.png" 
+                         class="h-14 w-auto bg-white p-2 rounded-lg" 
+                         alt="Logo Kelly Teixeira">
+                    <p class="text-sm">Simplificando direitos, garantindo benefícios.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Email"><i class="fas fa-envelope text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Contato (Novos Dados) -->
+                <div>
+                    <h5 class="font-bold text-white text-lg mb-4">Entre em Contato</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt w-4 mr-3 mt-1"></i>
+                            <span>(31) 99705-6059</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-4 mr-3 mt-1"></i>
+                            <span>
+                                Rua dos Timbiras, 1940 - sala 1317<br>
+                                Lourdes, Belo Horizonte - MG<br>
+                                30140-061
+                            </span>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Timbiras,+1940+-+sala+1317+-+Lourdes,+Belo+Horizonte+-+MG,+30140-061" 
+                               target="_blank" 
+                               class="text-gray-400 hover:text-white font-semibold">
+                                Ver no Google Maps &rarr;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Horário (Novos Dados) -->
+                <div>
+                    <h5 class="font-bold text-white text-lg mb-4">Horário de Funcionamento</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between">
+                            <span>Segunda a Sexta</span>
+                            <span class="text-right">
+                                08:00–12:00<br>13:00–17:00
+                            </span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábado</span>
+                            <span>Fechado</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo</span>
+                            <span>Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Navegação Rápida -->
+                <div>
+                    <h5 class="font-bold text-white text-lg mb-4">Navegação</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white">HOME</a></li>
+                        <li><a href="#" class="hover:text-white">O ESCRITÓRIO</a></li>
+                        <li><a href="#" class="hover:text-white">ATUAÇÃO</a></li>
+                        <li><a href="#" class="hover:text-white">BLOG</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Linha de Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Kelly Teixeira Advocacia. Todos os direitos reservados.</p>
+                <p class="mt-1">Desenvolvido por SRL Comunicação</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para Menu Mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                
+                // Troca o ícone do botão
+                const icon = menuButton.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    menuButton.setAttribute('aria-label', 'Fechar menu');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    menuButton.setAttribute('aria-label', 'Abrir menu');
+                }
+            });
+
+            // Fecha o menu ao clicar em um link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuButton.click();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
