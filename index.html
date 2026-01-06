@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelly Teixeira | Advocacia Previdenciária de Excelência</title>
+    <title>Kelly Teixeira | Advocacia Previdenciária</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -18,7 +18,7 @@
         h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
         
         .hero-gradient {
-            background: linear-gradient(to right, rgba(26, 5, 5, 0.92), rgba(153, 27, 27, 0.4)), 
+            background: linear-gradient(to bottom, rgba(26, 5, 5, 0.92), rgba(26, 5, 5, 0.7)), 
                         url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -26,12 +26,18 @@
 
         .nav-link::after {
             content: ''; display: block; width: 0; height: 1px;
-            background: #991b1b; transition: width .3s;
+            background: #C5A059; transition: width .3s;
         }
         .nav-link:hover::after { width: 100%; }
 
-        .section-fade { animation: fadeIn 1.2s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Animação suave para o menu mobile */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
     </style>
 
     <script>
@@ -49,182 +55,153 @@
         }
     </script>
 </head>
-<body class="text-gray-900 selection:bg-brand-gold selection:text-white">
+<body class="text-gray-900 overflow-x-hidden">
 
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
-        <nav class="container mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
-            <a href="#" class="transition-opacity hover:opacity-80">
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto max-w-7xl px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="z-50">
                 <img src="https://kellyteixeiraprev.com.br/wp-content/uploads/2025/05/Prancheta-52-copia-2@4x-1024x243.png" 
-                     class="h-10 md:h-12 w-auto" alt="Logo Kelly Teixeira">
+                     class="h-8 md:h-12 w-auto" alt="Logo">
             </a>
             
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#" class="nav-link text-[10px] tracking-[0.2em] font-semibold text-brand-dark">HOME</a>
                 <a href="#escritorio" class="nav-link text-[10px] tracking-[0.2em] font-semibold text-gray-500">O ESCRITÓRIO</a>
                 <a href="#atuacao" class="nav-link text-[10px] tracking-[0.2em] font-semibold text-gray-500">ATUAÇÃO</a>
-                <a href="#contato" class="bg-brand-red text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest font-bold hover:bg-brand-dark transition-all shadow-lg shadow-red-900/20">
-                    AGENDAR CONSULTA
+                <a href="#contato" class="bg-brand-red text-white px-6 py-2.5 rounded-full text-[10px] tracking-widest font-bold hover:bg-brand-dark transition-all">
+                    CONTATO
                 </a>
             </div>
 
-            <button id="mobile-menu-button" class="md:hidden text-brand-red p-2">
+            <button id="menu-open" class="md:hidden text-brand-red p-2 z-50">
                 <i class="fas fa-bars-staggered text-2xl"></i>
             </button>
         </nav>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[60] flex flex-col p-8 md:hidden">
+            <div class="flex justify-end">
+                <button id="menu-close" class="text-brand-gold p-2">
+                    <i class="fas fa-times text-3xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-8 mt-12 text-center">
+                <a href="#" class="text-brand-gold text-2xl font-serif italic menu-item">Home</a>
+                <a href="#escritorio" class="text-white text-2xl font-serif italic menu-item">O Escritório</a>
+                <a href="#atuacao" class="text-white text-2xl font-serif italic menu-item">Atuação</a>
+                <a href="#contato" class="bg-brand-gold text-brand-dark py-4 rounded-xl font-bold tracking-widest menu-item">CONTATO</a>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section class="hero-gradient relative min-h-[85vh] flex items-center text-white">
-            <div class="container mx-auto max-w-7xl px-6 py-24 relative z-10">
-                <div class="max-w-4xl section-fade">
-                    <span class="inline-block px-4 py-1 border border-brand-gold text-brand-gold text-[10px] tracking-[0.4em] font-bold mb-8 uppercase">
-                        Excelência Previdenciária desde 2003
+        <section class="hero-gradient relative min-h-[80vh] flex items-center text-white px-4 md:px-0">
+            <div class="container mx-auto max-w-7xl relative z-10 py-16">
+                <div class="max-w-4xl">
+                    <span class="inline-block px-3 py-1 border border-brand-gold text-brand-gold text-[9px] md:text-[10px] tracking-[0.4em] font-bold mb-6 uppercase">
+                        Excelência desde 2003
                     </span>
-                    <h1 class="text-5xl md:text-8xl font-bold mb-10 leading-[1.05]">
-                        Direitos simplificados, <br><span class="italic text-brand-gold font-serif">futuro garantido.</span>
+                    <h1 class="text-4xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+                        Direitos simplificados, <br class="hidden md:block">
+                        <span class="italic text-brand-gold font-serif text-3xl md:text-7xl lg:text-8xl">futuro garantido.</span>
                     </h1>
-                    <p class="text-lg md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-2xl font-light">
-                        Combinamos rigor técnico e acolhimento humano para assegurar o acesso à previdência com eficiência e dignidade.
+                    <p class="text-base md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl font-light">
+                        Aliamos técnica jurídica e acolhimento humano para garantir sua tranquilidade previdenciária.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <a href="#contato" class="bg-brand-gold text-white px-10 py-5 rounded-full font-bold tracking-widest text-xs hover:bg-white hover:text-brand-dark transition-all text-center shadow-xl">
-                            FALAR COM UM ESPECIALISTA
-                        </a>
-                    </div>
+                    <a href="#contato" class="inline-block w-full md:w-auto bg-brand-gold text-white px-10 py-5 rounded-full font-bold tracking-widest text-xs text-center shadow-xl">
+                        AGENDAR CONSULTA
+                    </a>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-cream to-transparent"></div>
         </section>
 
-        <section id="escritorio" class="py-24 bg-brand-cream overflow-hidden">
+        <section id="escritorio" class="py-16 md:py-24 bg-brand-cream">
             <div class="container mx-auto max-w-7xl px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                    
-                    <div class="lg:col-span-5 relative">
-                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-                            <img src="https://dbf3747bf4a2e41319a30e6eb4c23946.cdn.bubble.io/f1767713578466x299116342048832500/WhatsApp%20Image%202026-01-06%20at%2011.45.14.jpeg?_gl=1*1eogspt*_gcl_au*MTMyMDg4MDI2Ni4xNzY3NzEzNDUw*_ga*NTEzNjE0MjU3LjE3Njc3MTM0MzE.*_ga_BFPVR2DEE2*czE3Njc3MTM0MzAkbzEkZzEkdDE3Njc3MTM1NDIkajM0JGwwJGgw" 
-                                 alt="Dra. Kelly Teixeira" 
-                                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="w-full lg:w-5/12 relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 md:border-8 border-white">
+                            <img src="https://dbf3747bf4a2e41319a30e6eb4c23946.cdn.bubble.io/f1767713578466x299116342048832500/WhatsApp%20Image%202026-01-06%20at%2011.45.14.jpeg" 
+                                 alt="Dra. Kelly Teixeira" class="w-full h-auto">
                         </div>
-                        
-                        <div class="absolute -bottom-8 -right-8 bg-brand-red p-8 text-white rounded-2xl shadow-2xl z-20 hidden md:block">
-                            <p class="text-[10px] tracking-[0.3em] uppercase opacity-70 mb-1">Experiência</p>
-                            <p class="text-4xl font-serif font-bold italic">+20 Anos</p>
-                            <div class="w-12 h-1 bg-brand-gold mt-4"></div>
+                        <div class="absolute -bottom-6 -right-2 md:-right-8 bg-brand-red p-4 md:p-8 text-white rounded-xl shadow-2xl">
+                            <p class="text-[8px] md:text-[10px] tracking-widest uppercase opacity-70">Experiência</p>
+                            <p class="text-2xl md:text-4xl font-serif font-bold italic">+20 Anos</p>
                         </div>
-
-                        <div class="absolute -top-10 -left-10 w-40 h-40 border-l border-t border-brand-gold/30 -z-0"></div>
                     </div>
 
-                    <div class="lg:col-span-7">
-                        <span class="text-brand-gold text-xs tracking-[0.4em] font-bold uppercase mb-6 block">Nossa História</span>
-                        <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-8 italic leading-tight">Aliando conhecimento técnico <br>e acolhimento humano.</h2>
-                        
-                        <div class="space-y-6 text-gray-600 font-light text-lg leading-relaxed">
-                            <p>O <strong>Kelly Teixeira Advocacia Previdenciária</strong> nasceu da vontade de fazer a diferença na vida das pessoas. Desde 2003, quando Kelly Teixeira deu início à sua carreira, o escritório se destacou por aliar ética e excelência no atendimento.</p>
-                            
-                            <p>Com sede em <strong>Belo Horizonte</strong>, o escritório cresceu atendendo presencialmente segurados e dependentes do INSS, mas evoluiu para atender clientes de diversas localidades através da inovação digital.</p>
-
-                            <p>Essa transformação permitiu que nos tornássemos um exemplo de modernidade, adaptando-nos à era digital sem perder nossa essência: <strong>o cuidado com cada história.</strong></p>
-
-                            <div class="pt-8 mt-8 border-t border-gray-200">
-                                <p class="italic text-brand-dark font-serif text-xl">
-                                    "Somos um parceiro comprometido em lutar pelos seus direitos, com uma visão clara de inclusão e justiça social."
-                                </p>
-                            </div>
+                    <div class="w-full lg:w-7/12 mt-10 lg:mt-0 text-center lg:text-left">
+                        <span class="text-brand-gold text-xs tracking-[0.4em] font-bold uppercase mb-4 block">A Nossa História</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-brand-dark mb-6 italic leading-tight">Fazer a diferença na vida das pessoas.</h2>
+                        <div class="space-y-4 text-gray-600 font-light text-base md:text-lg leading-relaxed">
+                            <p>O <strong>Kelly Teixeira Advocacia Previdenciária</strong> nasceu em 2003, aliando conhecimento técnico e acolhimento ético.</p>
+                            <p>Com sede em <strong>Belo Horizonte</strong>, expandimos para o digital, permitindo inovação sem perder nossa essência humana.</p>
+                            <p class="italic text-brand-dark font-serif text-lg md:text-xl border-t lg:border-t-0 lg:border-l-4 border-brand-gold pt-6 lg:pt-0 lg:pl-6 mt-6">
+                                "Somos o parceiro comprometido em lutar pelos seus direitos."
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="atuacao" class="py-24 bg-white">
+        <section id="atuacao" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto max-w-7xl px-6">
-                <div class="text-center mb-20">
-                    <span class="text-brand-gold text-xs tracking-[0.4em] font-bold uppercase mb-4 block">Especialidades</span>
-                    <h2 class="text-4xl md:text-6xl font-bold italic text-brand-dark">Nossas Áreas de Atuação</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold italic text-brand-dark">Áreas de Atuação</h2>
+                    <div class="w-16 h-1 bg-brand-gold mx-auto mt-4"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-chess-knight text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors">Planejamento Previdenciário</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Estratégias personalizadas para garantir o melhor benefício e tranquilidade na aposentadoria.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-chess-knight text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter">Planejamento Previdenciário</h4>
+                        <p class="text-gray-500 text-sm font-light">Estratégias para garantir o melhor benefício na sua aposentadoria.</p>
                     </div>
-
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-user-shield text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors">Aposentadoria Especial</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Focada em profissionais da saúde, frentistas e mineiros expostos a agentes nocivos.</p>
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-user-shield text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter">Aposentadoria Especial</h4>
+                        <p class="text-gray-500 text-sm font-light">Especialistas em trabalhadores expostos a agentes nocivos e perigosos.</p>
                     </div>
-
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-seedling text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors">Aposentadoria Híbrida</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Combinamos tempos rurais e urbanos para assegurar o melhor benefício possível.</p>
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-seedling text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter text-balance">Aposentadoria Híbrida</h4>
+                        <p class="text-gray-500 text-sm font-light">Soma de tempo rural e urbano para assegurar o melhor benefício.</p>
                     </div>
-
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-wheelchair text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors text-balance">Aposentadoria PcD</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Condições especiais respeitando rigorosamente a legislação inclusiva.</p>
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-wheelchair text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter">Aposentadoria PcD</h4>
+                        <p class="text-gray-500 text-sm font-light">Condições diferenciadas respeitando a legislação inclusiva.</p>
                     </div>
-
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-hand-holding-medical text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors text-balance">Benefícios por Incapacidade</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Auxílio-doença e invalidez para casos como esquizofrenia e câncer de mama.</p>
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-hand-holding-medical text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter">Incapacidade</h4>
+                        <p class="text-gray-500 text-sm font-light">Auxílio-doença e invalidez para casos como câncer e esquizofrenia.</p>
                     </div>
-
-                    <div class="group p-10 bg-brand-cream rounded-3xl hover:bg-brand-red transition-all duration-500 shadow-sm hover:shadow-2xl">
-                        <i class="fas fa-users-rays text-3xl text-brand-gold mb-6 group-hover:text-white transition-colors"></i>
-                        <h4 class="text-xl font-bold mb-4 uppercase tracking-tighter group-hover:text-white transition-colors">Pensão por Morte</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-red-100 transition-colors">Assistência para dependentes, união estável e casais homoafetivos.</p>
+                    <div class="p-8 bg-brand-cream rounded-2xl border border-transparent hover:border-brand-gold/30 transition-all shadow-sm">
+                        <i class="fas fa-users-rays text-2xl text-brand-gold mb-4"></i>
+                        <h4 class="text-lg font-bold mb-3 uppercase tracking-tighter">Pensão por Morte</h4>
+                        <p class="text-gray-500 text-sm font-light">Suporte completo para dependentes, união estável e homoafetivos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 bg-brand-dark text-white">
-            <div class="container mx-auto max-w-7xl px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="border-t border-brand-gold pt-8">
-                        <h4 class="text-brand-gold font-bold tracking-widest text-xs uppercase mb-6">Missão</h4>
-                        <p class="text-gray-400 font-light leading-relaxed">Promover a inclusão social por meio de soluções jurídicas eficazes, garantindo direitos previdenciários com transparência.</p>
-                    </div>
-                    <div class="border-t border-brand-gold pt-8">
-                        <h4 class="text-brand-gold font-bold tracking-widest text-xs uppercase mb-6">Visão</h4>
-                        <p class="text-gray-400 font-light leading-relaxed">Ser referência nacional reconhecida pela excelência técnica e pelo impacto positivo na vida das pessoas.</p>
-                    </div>
-                    <div class="border-t border-brand-gold pt-8">
-                        <h4 class="text-brand-gold font-bold tracking-widest text-xs uppercase mb-6">Valores</h4>
-                        <ul class="text-gray-300 text-xs space-y-3 font-medium tracking-[0.2em] uppercase italic">
-                            <li><i class="fas fa-check text-brand-gold mr-2"></i> Empatia</li>
-                            <li><i class="fas fa-check text-brand-gold mr-2"></i> Compromisso</li>
-                            <li><i class="fas fa-check text-brand-gold mr-2"></i> Transparência</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="py-24 bg-brand-cream">
-            <div class="container mx-auto max-w-5xl px-6">
-                <div class="bg-white rounded-[2.5rem] shadow-3xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
-                    <div class="md:w-2/5 bg-brand-red p-12 text-white">
-                        <h3 class="text-3xl font-bold italic mb-6">Lutar pelos seus direitos é nossa missão.</h3>
-                        <p class="text-red-100 font-light mb-12">Entre em contato e descubra como nossa equipe pode ajudar você hoje.</p>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4"><i class="fab fa-whatsapp text-2xl"></i> <span>(31) 99705-6059</span></div>
-                            <div class="flex items-center gap-4"><i class="fas fa-envelope"></i> <span>contato@kellyteixeiraprev.com.br</span></div>
+        <section id="contato" class="py-16 md:py-24 bg-brand-cream px-4">
+            <div class="container mx-auto max-w-5xl">
+                <div class="bg-white rounded-3xl shadow-3xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                    <div class="md:w-5/12 bg-brand-red p-8 md:p-12 text-white">
+                        <h3 class="text-2xl md:text-3xl font-bold italic mb-6">Fale Conosco</h3>
+                        <p class="text-red-100 font-light text-sm mb-8 italic">Lutar pelos seus direitos é a nossa missão.</p>
+                        <div class="space-y-4 text-sm">
+                            <p><i class="fab fa-whatsapp text-brand-gold mr-2"></i> (31) 99705-6059</p>
+                            <p><i class="fas fa-location-dot text-brand-gold mr-2"></i> Lourdes, Belo Horizonte - MG</p>
                         </div>
                     </div>
-                    <div class="md:w-3/5 p-12">
+                    <div class="md:w-7/12 p-8 md:p-12">
                         <form class="space-y-6">
-                            <input type="text" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold font-light" placeholder="Nome Completo">
-                            <input type="tel" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold font-light" placeholder="Seu WhatsApp">
-                            <textarea rows="3" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold font-light" placeholder="Breve resumo do seu caso..."></textarea>
-                            <button class="w-full bg-brand-dark text-white font-bold py-5 rounded-2xl tracking-widest text-[10px] hover:bg-brand-red transition-all">ENVIAR SOLICITAÇÃO</button>
+                            <input type="text" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold text-sm" placeholder="Seu Nome">
+                            <input type="tel" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold text-sm" placeholder="WhatsApp">
+                            <textarea rows="3" class="w-full border-b border-gray-200 py-3 outline-none focus:border-brand-gold text-sm" placeholder="Como podemos ajudar?"></textarea>
+                            <button class="w-full bg-brand-dark text-white font-bold py-4 rounded-xl tracking-widest text-[10px] hover:bg-brand-red transition-all">ENVIAR</button>
                         </form>
                     </div>
                 </div>
@@ -232,20 +209,27 @@
         </section>
     </main>
 
-    <footer class="bg-brand-dark text-gray-500 py-16 border-t border-white/5">
-        <div class="container mx-auto max-w-7xl px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-                <img src="https://kellyteixeiraprev.com.br/wp-content/uploads/2025/05/Prancheta-52-copia-2@4x-1024x243.png" class="h-10 brightness-0 invert opacity-80" alt="Logo">
-                <div class="text-center md:text-right">
-                    <p class="text-xs uppercase tracking-widest">Rua dos Timbiras, 1940 - Sala 1317, Lourdes</p>
-                    <p class="text-xs uppercase tracking-widest mt-1">Belo Horizonte - MG | (31) 99705-6059</p>
-                </div>
-            </div>
-            <div class="mt-12 pt-8 border-t border-white/5 text-center text-[10px] tracking-[0.3em]">
-                <p>© 2026 KELLY TEIXEIRA ADVOCACIA. TODOS OS DIREITOS RESERVADOS. | DESIGN BY SRL COMUNICAÇÃO</p>
-            </div>
+    <footer class="bg-brand-dark text-gray-500 py-10 text-center px-4">
+        <div class="container mx-auto max-w-7xl">
+            <img src="https://kellyteixeiraprev.com.br/wp-content/uploads/2025/05/Prancheta-52-copia-2@4x-1024x243.png" class="h-8 mx-auto mb-6 brightness-0 invert opacity-60">
+            <p class="text-[9px] tracking-[0.3em] uppercase">© 2026 KELLY TEIXEIRA ADVOCACIA | DESENVOLVIDO POR SRL COMUNICAÇÃO</p>
         </div>
     </footer>
 
+    <script>
+        // Lógica do Menu Mobile
+        const openBtn = document.getElementById('menu-open');
+        const closeBtn = document.getElementById('menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        openBtn.addEventListener('click', () => menu.classList.add('open'));
+        closeBtn.addEventListener('click', () => menu.classList.remove('open'));
+        
+        // Fecha o menu ao clicar em qualquer link
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => menu.classList.remove('open'));
+        });
+    </script>
 </body>
 </html>
